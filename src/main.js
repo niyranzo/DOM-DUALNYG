@@ -30,9 +30,13 @@ saludos.forEach((saludo,index) => {
 // añadimos atributos a una etiqueta
 
 const miGit = document.getElementById("github");
+miGit.getAttribute
 // añadir atributo
 miGit.setAttribute("target", "_blank");
 // borrar atributo
 // miGit.removeAttribute("target");
 
 miGit.innerText = "ir a mi github";
+
+
+
