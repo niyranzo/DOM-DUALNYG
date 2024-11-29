@@ -33,6 +33,7 @@ a medida q busquemos, filtre los usuarios por su nombre.
     <td>Mexico</td>
   </tr>
 </table>
+ 
 */
 document.addEventListener("DOMContentLoaded", function () {
     const app = document.getElementById("app");
