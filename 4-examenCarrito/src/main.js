@@ -74,26 +74,46 @@ div.appendChild(p);
 */
 
 const carrito = new Carrito();
+carrito.cargarLocalStorage();
 
 //declaracion de funciones
 
 const renderListaCarrito = () => {
     const lista = document.getElementById("lista-productos");
     const totalCarrito = document.getElementById("total-carrito");
-    lista.innerHTML+= carrito.productos.map((producto,i) => `
+    lista.innerHTML= carrito.productos.map((producto,i) => `
         <li data-id="${i}">
         ${producto.info()}
         <button class="btn-editar" data-id="${i}">Editar</button>
         <button class="btn-borrar" data-id="${i}">Borrar</button>
-        </li>
-    `).join("");
+        </li> 
+    `).join(""); // los ${} siempre entre comillas!!!!!
     // pongo el total del carrito 
     totalCarrito.textContent = carrito.calcularTotal();
-
-    
-
+    carrito.guardarLocalStorage();
+7
 }
 
+const manejarAccionesHandler = (event) => {
+   const indice = Number(event.target.dataset.id); //sacar el indice
+    // borrar
+   if(event.target.classList.contains("btn-borrar")){
+        carrito.borrarProducto(indice);
+        renderListaCarrito();
+   }
+//    editar
+   if(event.target.classList.contains("btn-editar")){
+        // editamso 
+        const newCantidad = prompt("Introduce la nueva cantidad", carrito.productos[indice].cantidad);
+        // una vez que tengo la nueva cantidad, modifico el carrito de productos
+        if(newCantidad && Number(newCantidad>0)){
+            carrito.editarProducto(indice, newCantidad);
+            // renderLIstaCarrito()
+            renderListaCarrito();
+        }
+    }
+   console.log(indice);
+}
 
 const agregarProductoHandler = (event) =>{
     //no recargar pagina EN LA PRIMERA LINEA
@@ -102,19 +122,18 @@ const agregarProductoHandler = (event) =>{
     const cantidad =Number(document.getElementById("cantidad-producto").value);
     const precio = Number(document.getElementById("precio-producto").value);
 
-    if(nombre && cantidad>=0 && precio>=0){
+    if(nombre && cantidad > 0 && precio > 0){
         carrito.aggProducto(nombre, cantidad, precio);
-
         //pintar el producto en el UL
         renderListaCarrito();
         console.log(carrito);   
     }else{
         alert("Error al introducir los valores");
     }
-    event.target.reset();
+    event.target.reset(); //para resetear el formulario y que los campo esten vacios
 }
 
-function renderCarrito() {
+function init() {
     const app = document.getElementById("app");
     const tituloH1 = document.createElement("h1");
     tituloH1.textContent="Carrito Productos";
@@ -135,7 +154,13 @@ function renderCarrito() {
         </footer>
     `;
 
-    document.getElementById("form-producto").addEventListener("submit", agregarProductoHandler); //desde el form y no desde el button por si hacemos enter
+    document.getElementById("form-producto")
+    .addEventListener("submit", agregarProductoHandler); //desde el form y no desde el button por si hacemos enter
 
+    document.getElementById("lista-productos")
+    .addEventListener("click", manejarAccionesHandler);
+
+    // una vez que cargue la pag, renderizo el carrito
+    renderListaCarrito();
 }
-renderCarrito();
+init();
