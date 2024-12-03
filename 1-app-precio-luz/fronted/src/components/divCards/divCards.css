@@ -1,0 +1,14 @@
+#divCards {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+    text-align: center;
+    width: 400px; 
+    height: 500px; 
+    border: 2px solid #4CAF50;
+    border-radius: 10px;
+    font-size: 30px; 
+    margin-right: 20px;
+    overflow: auto; /*lo muestra en scrool si el contenido es mayor al div */
+}

@@ -28,7 +28,7 @@ export const hideSpinner = () => {
     // ocultar el spinner
     const spinner = document.getElementById("spinner");
     // volvemos a agregar el hidden para que se oculte el spinner
-    spinner.classList.add("hidden");
+    if (spinner) spinner.classList.add("hidden");
 }
 
 

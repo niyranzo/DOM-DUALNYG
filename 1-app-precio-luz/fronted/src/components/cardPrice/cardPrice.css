@@ -1,0 +1,10 @@
+#PriceCard {
+    text-align: center;
+    width: 200px; 
+    height: 110px; 
+    background-color: #4CAF50;
+    border: 2px solid black;
+    font-size: 15px; 
+    border-radius: 10px;
+    margin: 10px;
+}

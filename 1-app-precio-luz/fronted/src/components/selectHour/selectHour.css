@@ -1,8 +1,7 @@
 
-#load-prices-btn{
-    background-color: #4CAF50; 
-    color: white; 
-    border: none; 
+#HourRangeSelect{
+    color: black; 
+    border: 1px solid #4CAF50; 
     padding: 10px 20px; 
     text-align: center; 
     font-size: 16px; 
