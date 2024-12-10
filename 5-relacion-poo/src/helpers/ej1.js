@@ -1,6 +1,6 @@
 function Tarea(nombre) {
     // propiedades estaticas
-    Tarea.c
+    Ta
     // propiedades privadas
     // propiedades publicas
     this.id = ++Tarea.contador;

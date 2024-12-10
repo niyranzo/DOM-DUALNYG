@@ -1,0 +1,39 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Camiseta",
+            "price": 19.99,
+            "description": "Camiseta de algodón cómoda disponible en varios colores.",
+            "category": "Ropa"
+        },
+        {
+            "id": 2,
+            "name": "Jeans",
+            "price": 49.99,
+            "description": "Jeans de corte slim con un diseño moderno, perfectos para el día a día.",
+            "category": "Pantalones"
+        },
+        {
+            "id": 3,
+            "name": "Chaqueta",
+            "price": 89.95,
+            "description": "Chaqueta elegante y cálida para clima frío, con cremallera y bolsillos.",
+            "category": "Abrigos"
+        },
+        {
+            "id": 4,
+            "name": "Zapatillas",
+            "price": 69.50,
+            "description": "Zapatillas cómodas y duraderas, ideales tanto para deporte como para salidas casuales.",
+            "category": "Calzado"
+        },
+        {
+            "id": 5,
+            "name": "Suéter",
+            "price": 39.99,
+            "description": "Suéter de punto suave con un ajuste cómodo, disponible en varios colores.",
+            "category": "Prendas superiores"
+        }
+    ]
+}

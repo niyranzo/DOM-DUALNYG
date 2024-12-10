@@ -4,7 +4,7 @@
     -Mostrar el Spinner
     -Ocultar el Spinner
 */
-
+import "./spinner.css";
 export const createSpinner = () => {
     //crear spinner en el DOM
     const spinner = document.createElement("div");
@@ -13,7 +13,6 @@ export const createSpinner = () => {
     // añadimos clases
     spinner.classList.add("hidden", "spinner");
     // darle texto al spinner
-    spinner.textContent = "Cargando...";
     return spinner;
 }
 

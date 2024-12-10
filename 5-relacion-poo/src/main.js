@@ -10,7 +10,7 @@ import { TareaClass } from "./helpers/ej1";
 // tarea1.toggleCompletada(); //completo la tarea 
 // tarea1.info(); //la tarea esta completada
 
-//con clases
+//con clases 
 
 // const tarea3 = new TareaClass("Aprender Javascript");
 // const tarea4 = new TareaClass("Aprender Reac");
